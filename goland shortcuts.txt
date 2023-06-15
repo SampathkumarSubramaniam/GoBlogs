@@ -7,4 +7,4 @@
 7. cmd+E - opens recent files
 8. cmd+N - to implement interface - explore further, generate tests
 9. Control + T - shortcut for rename
-10. cmd+f8 - add breakpoint
+10. cmd+f8 - add breakpoints
