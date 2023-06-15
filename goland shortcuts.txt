@@ -1,0 +1,10 @@
+1. post fix operator to create treceivers
+2. err.nn
+3. shift+shift - actions, all
+4. globe+A
+5. control+space bar - fill in all fields for struct
+6. alt+enter - language injection for json
+7. cmd+E - opens recent files
+8. cmd+N - to implement interface - explore further, generate tests
+9. Control + T - shortcut for rename
+10. cmd+f8 - add breakpoint

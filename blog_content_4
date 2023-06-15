@@ -1,0 +1,152 @@
+Parsing JSON with multiple data types using Go.
+
+1. Most common operations - DevOps - CI/CD - parsing JSON - Azure, GCP, Jenkins.
+
+2. Possible data types: string, int, slice, maps, float, boolean
+
+3. compare with Python.
+
+4. Go
+
+5. interface or any
+
+6. marshalling, unmarshalling
+
+7. for loop
+
+8. assert
+
+9. difference between any and interface{}
+
+Hint for storing slice
+
+
+eg.,
+{
+    {
+      "userId": 1,
+      "userName": "Alex"
+      "active": true
+      "skills": {
+        "language": ["Python","Go"],
+        "certifications":["PMP","Google Cloud Architect"]
+      },
+      "roles": [
+        "projectlead",
+        "billingadmin",
+      ]
+    },
+    {
+      "userId": 2,
+      "userName": "Andy",
+      "active": false
+      "skills": {
+        "language": ["Java","C++"],
+        "certifications":["Azure Developer","SCJP"]
+      },
+      "roles": [
+        "projectmember",
+        "viewer"
+      ]
+    }
+}
+
+Best practice when using slice in Go
+
+Introduction:
+
+A Slice in Go is similar to an array but it is dynamically sized.
+There are different ways to create slices.
+In this article, I will explain the best approach to create a slice to make the execution much faster with less computational power.
+I will show how to measure the performance using benchmarking.
+
+How slice works?
+
+A slice is built on top of an array. When we create a slice, an underlying array is created by Go runtime.
+
+A slice holds below three values:
+
+Pointer to the array
+
+Length of the slice
+
+Capacity of the underlying array
+
+Eg.,
+
+2. How slice works?
+
+A slice is built on top of an array.
+When we create a slice, an underlying array is created by Go runtime.
+
+A slice holds below three values,
+1. Pointer to the array
+2. length of the slice
+3. capacity of the underlying array
+
+
+Different ways of creating Slice
+
+1. Using Var keyword:
+
+In the below example, we create a simple string slice for favourite sports:
+
+package main
+
+func main() {
+	sliceUsingVar()
+}
+
+func sliceUsingVar() []string {
+	var sports []string
+	sports = append(sports, "Volleyball")
+	sports = append(sports, "Swimming")
+	sports = append(sports, "Running")
+	sports = append(sports, "Badminton")
+	sports = append(sports, "Cricket")
+	sports = append(sports, "Football")
+	return sports
+}
+
+
+
+The make function takes a type, a length, and an optional capacity.
+When the capacity argument is omitted, it defaults to the specified length
+
+
+When called, make allocates an array and returns a slice that refers to that array.
+
+Slice is built on top of an array.
+Slices are dynamic and they can change in size.
+When you create a slice its sitting on top of an array.
+When a slice grows, old array has to be thrown out and new array has to be created
+=> this takes some processing power.
+
+If you already know the size of how many elements you are going to store.
+you could use "make" to make that array
+Wit this it creates an array which is big enough which could hold you data.
+
+- saves extra time and effort that compiler goes through to change the underlying array
+            - copies the value to new array
+            - throw away the old one.
+
+Prerequisites - if you know the size of the elements you are going to store.
+
+
+
+Blog Ideas:
+
+Go"tchas when using slice in Go
+1. make initializes with zero and issues with append - example
+refer go book
+2. slice[:], refers to the same array, avoid issue by creating a new slice
+refer to effective go
+3. use make instead of []  - todd video
+4. 	names := make([]string, 5, 10)
+	names := []string{"sampath", "nadhira", "kani", "tamil", "sena"}
+  will reinitialize the slice - my example
+  5. The slice index of a given element may be less than the index of the same element in the underlying array.
+  why? explain
+
+
+Note that this software is rated as "Restricted"; in accordance with SAP Policies and Guidelines, if you proceed with ordering and using it, you agree to adhere to the following restrictions: disable the "Code with me" option via disabling the JetBrains lobby address on users machines by editing the system settings: https://www.jetbrains.com/help/cwm/configure-the-url-server.html#lobby_server
